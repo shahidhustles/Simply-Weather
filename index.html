@@ -18,37 +18,34 @@
             <h3><i class="bi bi-compass d-inline-block align-text-top"></i> 
                 Simply Weather</h3>
             <div class="curr-location">
-                <p> <i class="bi bi-geo"></i> Current Location   </p>
+                <i class="bi bi-geo"></i>
+                <p id="curr-location"> <b>Current Location</b></p>
                 
             </div>
         </div>
+        <h4 class="animate"></h4>
         <div class="search">
-           <h4>The Only <i class="mk-white">Weather Forecast</i> you need.</h4>
-           <div class="search-box">
-            <input type="text" id="city-input" placeholder="Enter Location" />
-            <button id="search-btn">Search</button>
+            <div class="search-bar-container active">
+                <img src="https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/magnifier-512.png"alt="magnifier"class="magnifier"/>
+                <input type="text" class="input" placeholder="Search ... and press enter" />
+             </div>
         </div>
-        </div>
+        
         
     </div>
     <div class="container-right">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/Weather-App/">Weather Today</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Favorites</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Weather Weekly</a>
-            </li>
-           
-          </ul>
+     
             <div class="weather-today">
                 <h1>Today</h1>
                 <div class="card-today">
                     <div class="temp">
                         <h2 id="deg">25&deg;C</h2>
+                        <label class="switch">
+                            <input type="checkbox" id="unitToggle">
+                            <span class="slider round"></span>
+                        </label>
+                        <span id="unitLabel"><b>Convert to &deg;F</b></span>
+                        
                         <h2 id="deg-info">Sunny</h2>
                         <h2><img id="weather-icon" src="" alt=""></h2>
                         <p id="date">Mon Sep 30 2024</p>
@@ -59,7 +56,11 @@
                        
                     </div>
                 </div>
+                <!-- <div class="forecast">
+                    <h2>5 Day Forecast</h2>
+                </div> -->
                
+            </div>
             </div>
     </div>
     </body>
