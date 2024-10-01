@@ -1,86 +1,157 @@
-* {
+body{
+    background-color: #747272;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,22,142,1) 51%, rgba(0,212,255,0.9333858543417367) 89%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
     height: 100vh;
+   
+
 }
 
-.weather-app {
-    background-color: #fbfbfb;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 350px;
+.container-left{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    
+    
+    border-radius: 1.5rem;
+    color: black ;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://media1.tenor.com/m/835YCl4Cvx0AAAAd/sml-brooklyn-guy.gif) ;
+}
+.left-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-left h3{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    
+    top: 0;
+    position: sticky;
+
+
+}
+.left-top h3 {
+    color: black;
 }
 
-.app-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+.curr-location{
+    margin: 1.5rem;
+    border-radius: 1.5rem;
+    color: black;
 }
-
+.search{
+    margin: auto;
+    
+}
+.search h4{
+    /* border-bottom: 2px solid white; */
+    font-weight: 800;
+}
+.mk-white{
+    color:white ;
+    border-bottom: 2px solid white;
+    font-weight: 500;
+}
 .search-box {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
 
 .search-box input {
+    background-color: transparent;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid black;
     border-radius: 2rem;
     width: 70%;
     margin-right: 0.5rem;
+    color: rgb(0, 0, 0);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .search-box button {
     padding: 10px;
-    background-color: #007BFF;
+    background-color: transparent;
     color: white;
     border: none;
     border-radius: 2rem;
     cursor: pointer;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.search-box button:hover {
-    background-color: #0056b3;
-}
 
-.weather-info {
-    margin-top: 20px;
-}
 
-.weather-info h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-}
 
-.weather-details {
+
+
+body .container-right{
+    width: 40%;
+    margin: 1rem auto;
+    top: 0;
+    position: sticky;   
+}
+.weather-today h1{
+    margin: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.card-today{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    border-radius: 1.5rem; ;
+    margin-top: 3rem;
 }
-
-.weather-details p {
-    margin: 0 10px;
-    font-size: 18px;
-    color: #555;
+.temp{
+    padding-right: 50px;
+    padding-left: 30px;
+    border-right: 2px solid rgb(107, 105, 105);
 }
-
-.weather-details img {
-    width: 50px;
+#deg{
+    font-size: 4rem;
+}#deg-info{
+    font-size: 2.5rem;
+    font-weight: 500;
     height: 50px;
+    width: 140px ;
+    
+}#wind{
+    font-weight: 400;
+}#humidity{
+    font-weight: 400;
 }
 
+.info{
+    display: flex;
+    flex-direction: column;
+}
+.wind{
+    border: 1px solid lightgray;
+    border-radius: 1.5rem;
+    margin-left: 30px;
+    width: 150px;
+    padding-left: 30px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+ .hum{
+    border: 1px solid lightgray;
+    border-radius: 1.5rem;
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 150px;
+    padding-left: 10px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#weather-icon{
+    height: 50px;
+    margin-top: 2rem;
+}
 
