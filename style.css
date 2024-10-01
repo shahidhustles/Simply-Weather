@@ -123,10 +123,19 @@ body .container-right{
     font-size: 2.5rem;
     font-weight: 700;
 }
-.forecast h2{
-    margin: 1rem;
-    font-size: 2.5rem;
+.weather-today p{
+    display: inline;
+    font-size: 1.5rem;
     font-weight: 700;
+    margin-left: 0.5rem;
+}
+.weather-today i{
+    height: 50px;
+    width: 50px;
+}
+.weather-today button{
+    background-color: white;
+    border: none;
 }
 .card-today{
     display: flex;
@@ -225,3 +234,11 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+
+/* .bookmark h2{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}.bookmark p{
+    margin-left: 1rem;
+    
+} */
