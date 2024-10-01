@@ -10,6 +10,37 @@ body{
 
 }
 
+/* For small screens */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .container-left, .container-right {
+        width: 100%;
+    }
+
+    .search-bar-container {
+        margin-left: 0;
+    }
+
+    .weather-today h1 {
+        font-size: 2rem;
+    }
+
+    .temp {
+        padding-right: 20px;
+    }
+
+    #deg {
+        font-size: 2.5rem;
+    }
+    .bookmark-list li {
+        width: 100%;
+    }
+}
+
+
 .container-left{
     width: 60%;
     display: flex;
@@ -242,3 +273,22 @@ input:checked + .slider:before {
     margin-left: 1rem;
     
 } */
+.bookmark-list{
+    display: flex;
+    flex-direction: column;
+}
+.bookmark-list li {
+    margin-left: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    list-style-type: none;
+    max-width: 200px;
+    background-color: light;
+    border-radius: 1.5rem;
+    border: 1px solid #2196F3;
+    cursor: pointer;
+    padding-left:10px ;
+}
+.bookmark-list h2{
+    padding-left:20px;
+}

@@ -21,7 +21,7 @@ cityInput.addEventListener("keydown", (e)=>{
     if(e.key === "Enter" && cityInput.value.trim() !==""){
         
         seeWeather(cityInput.value)
-        
+        cityInput.value = ""    
     }
 })
 
@@ -148,6 +148,33 @@ function updateText() {
     }
     setTimeout(updateText, 120);
 }
+
+const saveBtn = document.querySelector("#save-btn");
+let bookmarks = JSON.parse(localStorage.getItem("bookmarkedCities")) || [];
+
+saveBtn.addEventListener("click", () => {
+    const city = document.querySelector(".city").textContent;
+    if (city && !bookmarks.includes(city)) {
+        bookmarks.push(city);
+        localStorage.setItem("bookmarkedCities", JSON.stringify(bookmarks));
+        alert(`${city} saved as a bookmark.`);
+        displayBookmarks(); // Update the display
+    }
+});
+
+function displayBookmarks() {
+    const bookmarkContainer = document.querySelector(".bookmark-list");
+    bookmarkContainer.innerHTML = "";
+    bookmarks.forEach((city) => {
+        const cityElem = document.createElement("li");
+        cityElem.textContent = city;
+        cityElem.addEventListener("click", () => seeWeather(city)); // Fetch weather when clicked
+        bookmarkContainer.appendChild(cityElem);
+    });
+}
+
+// Call displayBookmarks on page load to show saved bookmarks
+document.addEventListener("DOMContentLoaded", displayBookmarks);
 
 // let myCities = [];
 // // localStorage.clear()
