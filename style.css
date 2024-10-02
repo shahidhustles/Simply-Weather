@@ -292,3 +292,10 @@ input:checked + .slider:before {
 .bookmark-list h2{
     padding-left:20px;
 }
+
+#loom{
+    color: white;
+    margin : 2rem ;
+    
+
+}
