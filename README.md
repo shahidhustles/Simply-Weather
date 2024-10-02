@@ -2,7 +2,7 @@
 
 Check weather of your city.
 =========================
-made with https://openweathermap.org/api open source api.
-Version: 3.0 
-**Note: Not built for mobile users yet.**
+made with https://openweathermap.org/api open source api. <br> <br>
+Version: 4.0<br> <br>
+**Note: Partially built for mobile users **
 
