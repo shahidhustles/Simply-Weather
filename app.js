@@ -1,3 +1,4 @@
+alert("Make sure your device's location service is turned on.");
 const cityInput = document.querySelector(".input")
 const searchBtn = document.querySelector("#search-btn")
 let apiKey = "7ee49280c93e60bd0e96ca2ecaf6e810"
