@@ -12,11 +12,11 @@
         justify-content: center;
         width: 100%;
         position: relative; 
-        margin-bottom: 2rem; /* Increased margin to give more space below the logo */
+        margin-bottom: 2rem; 
         
     }
     .search-box {
-        margin-top: 6rem; /* Increased margin to push the search bar further down */
+        margin-top: 6rem; 
     }
    
 }
@@ -37,7 +37,7 @@
     width:50px ;
     margin: 1rem;
     height: 50px;
-
+    position: sticky;
 }
 
 .main{
