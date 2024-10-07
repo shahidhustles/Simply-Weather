@@ -13,7 +13,7 @@
         width: 100%;
         position: relative; 
         margin-bottom: 2rem; /* Increased margin to give more space below the logo */
-        display: block;
+        
     }
     .search-box {
         margin-top: 6rem; /* Increased margin to push the search bar further down */
@@ -23,11 +23,10 @@
 .logo{
     display: flex;
     flex-direction: row;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+    /* position: fixed;
+    top: 0; */
+   
+    
     
 
 }#title {
@@ -266,7 +265,7 @@ input:checked + .slider:before {
 
 
 .footer{
-    position: fixed;
+    position: sticky;
     bottom: 0;
     margin-top: 1rem;
     width: 100%;
