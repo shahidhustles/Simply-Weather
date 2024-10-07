@@ -9,20 +9,79 @@
     <link rel="shortcut icon" href="./assests/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="logo">
+        <h1 id="title">Simply Weather</h1>
+        
+    </div>
+
+    <div class="main">
+        <div class="search-box">
+            <input type="text" class="search-bar" placeholder="Search for a city">
+            <button class="search-btn">Search</button>
+        </div>
+        <div class="main-top">   
+            <div class="weather-condition">
+                <img id="weather-icon" src="" alt="">
+                <div class="weather">Sunny</div>
+
+            </div>
+            <div class="weather-info">
+                <div class="temp">25&deg;C</div>
+                <label class="switch">
+                    <input type="checkbox" id="unitToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span id="unitLabel"><b>Convert to &deg;F</b></span>
+            </div>
+            <div class="curr-location">
+                <i class="bi bi-geo"></i>
+                <p id="curr-location"> Current Location</p>
+                <button id="save-btn"><i class="bi bi-bookmark"></i> Bookmark</button>
+                
+            </div>
+        </div>
+        
+            <div class="weather-details" >
+                <div class="winds" id="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1247/1247767.png" alt="wind-icon"> 
+                    <span class="winds-text">5 metre/sec</span>
+                </div>
+                <div class="humidity" id="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/4148/4148460.png" alt="humidity-icon"> 
+                    <span class="humidity-text">50%</span>
+                </div>
+            </div>
+        
+        
+
+    </div>
+    <hr>
+     <div class="bookmark">
+        <h2>My bookmarks</h2>
+        <p class="infoSaved">
+            <ul class="bookmark-list"></ul>
+        </p>
+    </div> 
    
-    <div class="container-left">
+    <div class="footer">
+        <p id="loom">Let me explain you all the features and  how to use them, click <a target="_blank" href="https://www.loom.com/share/f57094baa1614d7490dc92dcd274c726?sid=ace1a796-b7c6-4d67-bec2-93b897696cfc">here.</a></p>
+        <p>&copy; <a href="">@shahidhustles</a></p>
+    </div>
+
+
+    <!-- <div class="container-left">
         <div class="left-top">
             <h3><i class="bi bi-compass d-inline-block align-text-top"></i> 
                 Simply Weather</h3>
-            <div class="curr-location">
-                <i class="bi bi-geo"></i>
-                <p id="curr-location"> <b>Current Location</b></p>
-                
-            </div>
+            
         </div>
         <h4 class="animate"></h4>
         <div class="search">
@@ -31,26 +90,22 @@
                 <input type="text" class="input" placeholder="Search ... and press enter" />
              </div>
         </div>
-        <p id="loom">Let me explain you all the features and  how to use them, click <a target="_blank" href="https://www.loom.com/share/f57094baa1614d7490dc92dcd274c726?sid=ace1a796-b7c6-4d67-bec2-93b897696cfc">here.</a></p>
+       
 
         
-    </div>
-    <div class="container-right">
+    </div> -->
+    <!-- <div class="container-right">
      
             <div class="weather-today">
                 <h1>Today</h1>
                 <p class="city">City</p> 
-                <button id="save-btn"><i class="bi bi-bookmark"></i> Bookmark</button>
                 
-<!--  <button><i class="bi bi-bookmark"></i></button> -->
+                
+  <button><i class="bi bi-bookmark"></i></button> 
                 <div class="card-today">
                     <div class="temp">
                         <h2 id="deg">25&deg;C</h2>
-                        <label class="switch">
-                            <input type="checkbox" id="unitToggle">
-                            <span class="slider round"></span>
-                        </label>
-                        <span id="unitLabel"><b>Convert to &deg;F</b></span>
+                       
                         
                         <h2 id="deg-info">Sunny</h2>
                         <h2><img id="weather-icon" src="" alt=""></h2>
@@ -63,19 +118,11 @@
                     </div>
                 </div>
                 <hr>
-                <h2>My bookmarks</h2>
-                <div class="bookmark-list">
-                    <h2>My bookmarks</h2>
-                </div>
-                <!-- <div class="bookmark">
-                    <h2>Bookmarked City</h2>
-                    <p></p>
-                    <p class="infoSaved"></p>
-                </div> -->
+                
                
             </div>
             </div>
-    </div>
+    </div> -->
     </body>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
