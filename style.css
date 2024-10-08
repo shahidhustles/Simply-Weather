@@ -2,10 +2,24 @@
     background-color: black;
     color: white;
     font-family : "Questrial", sans-serif;
-    margin: auto 0 ;
+    margin:0 ;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
 }
+:root {
+    /*  change this for scaling  */
+      --m: 1rem;
+      
+      --red: #FF6565;
+      --pink: #FF64F9;
+      --purple: #6B5FFF;
+      --blue: #4D8AFF;
+      --green: #5BFF89;
+      --yellow: #FFEE55;
+      --orange: #FF6D1B;
+      
+
+    }
 @media (max-width: 576px) {
     
     .logo {
@@ -18,8 +32,15 @@
     .search-box {
         margin-top: 6rem; 
     }
+
+}
+@media screen and (max-width: 1000px) {
+    :root {
+      --m: 2rem;
+    }
    
 }
+
 .logo{
     display: flex;
     flex-direction: row;
@@ -45,7 +66,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    flex: 1;
     
 }
 
@@ -208,9 +229,6 @@ input:checked + .slider:before {
     align-items: center;
 }
 .bookmark-list li {
-    
-    
-    
     margin-right: 0.5em;
     line-height: 1.8rem;
     border-radius: 9.5px;
@@ -254,26 +272,93 @@ input:checked + .slider:before {
       rgba(54, 228, 218, 0.5) 0px 0px 20px 0px;
 }
   
-  .btn > span {
-    text-align: left;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    word-break: break-all;
-  }
+
 
 
 .footer{
-    position: sticky;
-    bottom: 0;
-    margin-top: 1rem;
+    color: white;
+    padding: 1rem 0;
+    margin-top: auto;
     width: 100%;
     text-align: center;
-    background-color:#2b73c5;
-}hr{
+    background-color:rgb(43, 115, 197);
+}.footer a{
+    color: rgb(0, 0, 0);
+    
+}
+hr{
     width: 50%;
     height: 2px;
     background-color: white;
     margin: auto;
 }
+
+.loading-modal{
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 1);
+    height: 100%;
+    width: 100%;
+}.loading-modal img{
+    height: 20%;
+    display: block;
+    margin: 10em auto 0;
+}
+
+.loading-modal button {
+    border: calc(0.08 * var(--m)) solid transparent;
+    position: relative;
+    color: #F3F3F3;
+    font-family: 'Space Grotesk';
+    font-size: var(--m);
+    border-radius: calc(0.7 * var(--m));
+    /* padding: calc(0.5 * var(--m)) calc(1 * var(--m)); */
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin: 2em auto ;
+    max-width: 200px;
+    width: 30%;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    background:linear-gradient(#121213, #121213), linear-gradient(#121213 50%, rgba(18, 18, 19, 0.6) 80%, rgba(18, 18, 19, 0)),  linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    background-origin: border-box;
+    background-clip: padding-box, border-box, border-box;
+    background-size: 200%;
+    animation: animate 2s infinite linear;
+}
+  
+.loading-modal button::before {
+    content: '';
+    background: linear-gradient(90deg, var(--orange), var(--yellow), var(--green), var(--blue), var(--purple), var(--pink), var(--red));
+    height: 30%;
+    width: 60%;
+    position: absolute;
+    bottom: -20%;
+    z-index: -5;
+    background-size: 200%;
+    animation: animate 2s infinite linear;
+    filter: blur(calc(0.8 * var(--m)));
+}
+  
+.loading-modal button:hover, .loading-modal button:hover::before {
+    animation: animate 0.5s infinite linear;
+}
+  
+@keyframes animate {
+    0% {background-position: 0}
+    100% {background-position: 200%}
+}
+
+  
+
+  
+.show{
+    display: flex;
+}
+

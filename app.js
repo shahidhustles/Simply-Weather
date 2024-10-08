@@ -6,6 +6,16 @@ const saveBtn = document.querySelector("#save-btn");
 const bookmarks = JSON.parse(localStorage.getItem("bookmarkedCities")) || [];
 const apiKey = "7ee49280c93e60bd0e96ca2ecaf6e810";
 const baseUrl = `https://api.openweathermap.org/data/2.5/weather`;
+const modal = document.querySelector(".modal");
+const modalBtn = document.querySelector(".modal-btn");
+const loadModal = document.querySelector(".loading-modal");
+
+
+//show modal when page loads
+loadModal.classList.add("show");
+
+//get coords when clicked
+modalBtn.addEventListener("click", getLocation);
 
 //search city area
 searchBtn.addEventListener("click", () => {
@@ -35,16 +45,23 @@ unitToggle.addEventListener('change', () => {
     }
 });
 
-//using users current location
-navigator.geolocation.getCurrentPosition(
-    (position) => {
-        fetchWeatherByCoords(position.coords.latitude, position.coords.longitude);
-    },
-    (error) => {
-        console.error("Error getting geolocation: ", error);
-    }
-);
+//using users current location and hide the modal
+function getLocation() {
+   if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            fetchWeatherByCoords(position.coords.latitude, position.coords.longitude);
+            loadModal.classList.remove("show");
+        },
+        (error) => {
+            console.error("Error getting geolocation: ", error);
+        }
+    );
+   } 
+   
+}
 
+//save bookmarks
 saveBtn.addEventListener("click", () => {
     const city = document.querySelector("#curr-location").textContent;
     if (city && !bookmarks.includes(city)) {
@@ -57,6 +74,7 @@ saveBtn.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", displayBookmarks);
 
+//fetch by input
 async function fetchWeather(city) {
     const url = `${baseUrl}?q=${city}&appid=${apiKey}&units=metric`;
     try {
@@ -67,6 +85,7 @@ async function fetchWeather(city) {
     }
 }
 
+//fetch by coordinates
 async function fetchWeatherByCoords(lat, long) {
     const url = `${baseUrl}?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
     try {
@@ -77,6 +96,7 @@ async function fetchWeatherByCoords(lat, long) {
     }
 }
 
+//render weather data
 function updateWeatherData(data) {
     temp.textContent = `${data.main.temp.toFixed(0)}°C`;
     document.querySelector("#curr-location").textContent = data.name;
@@ -96,6 +116,7 @@ function updateWeatherData(data) {
     }
 }
 
+// render bookmarks
 function displayBookmarks() {
     const bookmarkContainer = document.querySelector(".bookmark-list");
     bookmarkContainer.innerHTML = "";
