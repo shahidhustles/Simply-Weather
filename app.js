@@ -50,11 +50,14 @@ function getLocation() {
    if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(
         (position) => {
-            fetchWeatherByCoords(position.coords.latitude, position.coords.longitude);
             loadModal.classList.remove("show");
+            fetchWeatherByCoords(position.coords.latitude, position.coords.longitude);
         },
         (error) => {
             console.error("Error getting geolocation: ", error);
+                loadModal.classList.remove("show");
+                //if it fails
+                alert("Unable to retrieve your location. Please check your settings.");
         }
     );
    } 

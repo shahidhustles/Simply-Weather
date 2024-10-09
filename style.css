@@ -314,7 +314,6 @@ hr{
     border: calc(0.08 * var(--m)) solid transparent;
     position: relative;
     color: #F3F3F3;
-    font-family: 'Space Grotesk';
     font-size: var(--m);
     border-radius: calc(0.7 * var(--m));
     /* padding: calc(0.5 * var(--m)) calc(1 * var(--m)); */
