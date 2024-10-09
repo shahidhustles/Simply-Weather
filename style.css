@@ -361,3 +361,11 @@ hr{
     display: flex;
 }
 
+.summary {
+    background-color: #0e3f77;
+    border-radius: 2rem;
+}.summary p {
+    padding: 1rem;
+    color: white;
+    text-align: center;
+}

@@ -1,3 +1,4 @@
+import { weatherSummaries } from './summary.js';
 const cityInput = document.querySelector(".search-bar");
 const searchBtn = document.querySelector(".search-btn");
 const unitToggle = document.getElementById('unitToggle');
@@ -6,7 +7,6 @@ const saveBtn = document.querySelector("#save-btn");
 const bookmarks = JSON.parse(localStorage.getItem("bookmarkedCities")) || [];
 const apiKey = "7ee49280c93e60bd0e96ca2ecaf6e810";
 const baseUrl = `https://api.openweathermap.org/data/2.5/weather`;
-const modal = document.querySelector(".modal");
 const modalBtn = document.querySelector(".modal-btn");
 const loadModal = document.querySelector(".loading-modal");
 
@@ -101,6 +101,7 @@ async function fetchWeatherByCoords(lat, long) {
 
 //render weather data
 function updateWeatherData(data) {
+    loadSummary(data.weather[0].main)
     temp.textContent = `${data.main.temp.toFixed(0)}°C`;
     document.querySelector("#curr-location").textContent = data.name;
     document.querySelector(".winds-text").textContent = `${data.wind.speed} metre/sec`;
@@ -131,3 +132,8 @@ function displayBookmarks() {
     });
 }
 
+//load summary
+function loadSummary(weather) {
+    const summary = document.querySelector(".summary p");
+    summary.textContent = weatherSummaries[weather];
+}
